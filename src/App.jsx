@@ -9,9 +9,19 @@ function App() {
     // --- .then() ---
     const handleThen = () => {
         setLog("処理中...");
-        fetchData()
-            .then((res) => setLog("結果: " + res))
-            .catch((err) => setLog("エラー: " + err));
+
+        const promise = fetchData();
+        console.log("Promise オブジェクト:", promise); // ← ここで確認できる！
+
+        promise
+            .then((res) => {
+                console.log("then の中（成功）:", res);
+                setLog("結果: " + res);
+            })
+            .catch((err) => {
+                console.log("catch の中（失敗）:", err);
+                setLog("エラー: " + err);
+            });
     };
 
     // --- async/await  ---
