@@ -17,11 +17,17 @@ function App() {
             .then((res) => {
                 console.log("then の中（成功）:", res);
                 setLog("結果: " + res);
+                console.log('Promiseの状態変化後:', promise);
             })
             .catch((err) => {
                 console.log("catch の中（失敗）:", err);
                 setLog("エラー: " + err);
-            });
+            })
+            .finally(()=>{
+                console.log('Promise完了:', promise);
+            })
+        ;
+
     };
 
     // --- async/await  ---
