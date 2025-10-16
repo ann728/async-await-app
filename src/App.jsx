@@ -11,7 +11,7 @@ function App() {
         setLog("処理中...");
 
         const promise = fetchData();
-        console.log("Promise オブジェクト:", promise); // ← ここで確認できる！
+        console.log("Promise オブジェクト:", promise);
 
         promise
             .then((res) => {
