@@ -6,7 +6,7 @@ function App() {
     const [log, setLog] = useState("");
     const fetchData = () => new Promise((resolve, reject) => setTimeout(() => (Math.random() > 0.3 ? resolve("成功") : reject("失敗")), 1000));
 
-    // --- .then() 版 ---
+    // --- .then() ---
     const handleThen = () => {
         setLog("処理中...");
         fetchData()
@@ -14,7 +14,7 @@ function App() {
             .catch((err) => setLog("エラー: " + err));
     };
 
-    // --- async/await 版 ---
+    // --- async/await  ---
     const handleAsync = async () => {
         setLog("処理中...");
         try {
